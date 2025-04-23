@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>謎題一：走廊盡頭的鏡子</title>
+  <style>
+    body { font-family: monospace; background-color: #111; color: #eee; padding: 20px; }
+    .hint, .answer, .result { margin-top: 20px; }
+    button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h1>🔹 謎題一：走廊盡頭的鏡子</h1>
+  <p>一名軍官每天夜裡都會在走廊巡邏，儘管沒有敵人，沒有命令，也沒有其他人知情。<br>
+  但某夜，他突然停下腳步，對著鏡子開槍自盡。</p>
+
+  <div class="hint">
+    <button onclick="document.getElementById('hints').style.display='block'">查看提示</button>
+    <ul id="hints" style="display:none;">
+      <li>他不是瘋了。</li>
+      <li>他不是自殺未遂。</li>
+      <li>他看見了「不該存在的東西」。</li>
+    </ul>
+  </div>
+
+  <div class="answer">
+    <p>你認為他為什麼開槍？</p>
+    <input type="text" id="input1" placeholder="請輸入你的推理">
+    <button onclick="checkAnswer1()">提交</button>
+    <div id="result1" class="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer1() {
+      let ans = document.getElementById("input1").value.toLowerCase();
+      if (ans.includes("鏡") && (ans.includes("自己") || ans.includes("陌生人") || ans.includes("記憶"))) {
+        document.getElementById("result1").innerHTML = "✅ 正確！暗號片段：<code>...</code>";
+      } else {
+        document.getElementById("result1").innerHTML = "❌ 還沒說中喔，再想想。";
+      }
+    }
+  </script>
+</body>
+</html>
